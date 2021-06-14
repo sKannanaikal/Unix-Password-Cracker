@@ -4,7 +4,7 @@ import crypt
 def checkPassword(passHash, word):
     salt = passHash[0:2]
 
-    currentHash = crypt.crypt('nutmeg', 'Mi')
+    currentHash = crypt.crypt(word, salt)
 
     if currentHash.__eq__(passHash):
         print("Found the password {solution}".format(solution=word))
